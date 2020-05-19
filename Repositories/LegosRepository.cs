@@ -71,8 +71,7 @@ namespace legodb.Repositories
       string sql = @"
         UPDATE legos
         SET
-          title = @Title,
-          body = @Body,
+          title = @Title
         WHERE id = @Id LIMIT 1";
       _db.Execute(sql, legoToUpdate);
       return legoToUpdate;

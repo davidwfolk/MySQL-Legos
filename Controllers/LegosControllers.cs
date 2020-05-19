@@ -19,7 +19,7 @@ namespace legodb.Controllers
     {
       _bs = bs;
     }
-    // Route path: https://localhost:5001/api/blogs
+    // Route path: https://localhost:5001/api/legos
     [HttpGet]
     public ActionResult<IEnumerable<Lego>> GetAll()
     {
@@ -34,13 +34,13 @@ namespace legodb.Controllers
     }
 
     //NOTE decision we made, this route does not follow standard conventions
-    // Route path: https://localhost:5001/api/blogs/user
+    // Route path: https://localhost:5001/api/legos/user
     [HttpGet("user")]
     public ActionResult<IEnumerable<Lego>> GetLegosByUserEmail()
     {
       try
       {
-        string creatorEmail = "Jimmy@momoney.com";
+        string creatorEmail = "Jerry@momoney.com";
         return Ok(_bs.GetLegosByUserEmail(creatorEmail));
       }
       catch (System.Exception err)
@@ -49,7 +49,7 @@ namespace legodb.Controllers
       }
     }
 
-    // Route path: https://localhost:5001/api/blogs/1
+    // Route path: https://localhost:5001/api/legos/1
     [HttpGet("{id}")]
     public ActionResult<Lego> GetById(int id)
     {
@@ -64,13 +64,13 @@ namespace legodb.Controllers
     }
 
 
-    // Route path: https://localhost:5001/api/blogs
+    // Route path: https://localhost:5001/api/legos
     [HttpPost]
     public ActionResult<Lego> Create([FromBody] Lego newLego)
     {
       try
       {
-        newLego.CreatorEmail = "Jimmy@momoney.com";
+        newLego.CreatorEmail = "Jerry@momoney.com";
         return Ok(_bs.Create(newLego));
       }
       catch (System.Exception err)
@@ -79,7 +79,7 @@ namespace legodb.Controllers
       }
     }
 
-    // Route path: https://localhost:5001/api/blogs/1
+    // Route path: https://localhost:5001/api/legos/1
     [HttpDelete("{id}")]
     public ActionResult<Lego> Delete(int id)
     {

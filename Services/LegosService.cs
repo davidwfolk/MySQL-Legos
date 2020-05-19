@@ -21,7 +21,7 @@ namespace legodb.Services
     {
       return _repo.GetLegosByUserEmail(creatorEmail);
     }
-    internal IEnumerable<TagLegoViewModel> GetLegosByTagId(int id)
+    internal IEnumerable<TagLegoViewModel> GetLegosBySetId(int id)
     {
       return _repo.GetLegosByTagId(id);
     }

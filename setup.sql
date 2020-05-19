@@ -3,32 +3,32 @@
 --   title VARCHAR(80) NOT NULL,
 --   PRIMARY KEY (id)
 -- )
--- ALTER TABLE blogs DROP description;
--- ALTER TABLE blogs ADD CreatorEmail varchar(255) NOT NULL;
+-- ALTER TABLE legos DROP description;
+-- ALTER TABLE legos ADD CreatorEmail varchar(255) NOT NULL;
 
--- CREATE TABLE tags(
+-- CREATE TABLE sets(
 --   id INT NOT NULL AUTO_INCREMENT,
 --   title VARCHAR(20) NOT NULL,
 --   PRIMARY KEY (id)
 -- )
 
--- CREATE TABLE tagblogs(
+-- CREATE TABLE setlegos(
 --   id INT NOT NULL AUTO_INCREMENT,
---   blogId INT NOT NULL,
---   tagId INT NOT NULL,
+--   legoId INT NOT NULL,
+--   setId INT NOT NULL,
 --   PRIMARY KEY (id),
 
---   INDEX (blogId),
+--   INDEX (legoId),
 
---   FOREIGN KEY (blogId)
---     REFERENCES blogs(id)
+--   FOREIGN KEY (legoId)
+--     REFERENCES legos(id)
 --     ON DELETE CASCADE,
 
---   FOREIGN KEY (tagId)
---     REFERENCES tags(id)
+--   FOREIGN KEY (setId)
+--     REFERENCES sets(id)
 --     ON DELETE CASCADE
 -- )
--- SELECT * FROM blogs WHERE Id = 7
+-- SELECT * FROM legos WHERE Id = 7
 
 -- NOTE Execute sql query command with ctrl + alt + e
 

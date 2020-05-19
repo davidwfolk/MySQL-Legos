@@ -33,6 +33,8 @@ namespace legodb
       services.AddScoped<IDbConnection>(x => CreateDbConnection());
       services.AddTransient<LegosService>();
       services.AddTransient<LegosRepository>();
+      services.AddTransient<SetsService>();
+      services.AddTransient<SetsRepository>();
     }
     
     private IDbConnection CreateDbConnection()
